@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:15
+    container_name: postgres_db_ssmif
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=ssmif
+    ports:
+      - "5432:5432"
+    volumes:
+      - ssmif_db:/var/lib/postgresql/data
+
+
+volumes:
+  ssmif_db:
