@@ -34,11 +34,11 @@ This application was developed using nix, you can run ``nix develop`` to enter i
 
 Alternatively:
 1. Create and enter a [[python virtual environment]](https://docs.python.org/3/library/venv.html)
-2. 
+2. Enter into the source directory
 ```
 cd src
 ```
-3. 
+3. Run this command to install all dependencies
 ```
 pip install -r requirements.txt
 ```
