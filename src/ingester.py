@@ -30,15 +30,6 @@ def ingest_data(start_date, end_date, ticker):
         index =False
     )
 
-
-def test_ingest1(start_date,end_date,ticker):
-    tickerData = yf.download(ticker, start_date, end_date, group_by=ticker, auto_adjust=False)[ticker]
-    tickerData.index = tickerData.index.tz_localize(None)
-    return tickerData
-
-def test_ingest2():
-    ingest_data('2020-01-01','2025-01-01','AAPL')
-    
 def retrieveTicker(start_date,end_date,ticker):
     '''Returns price data from db of start and end date with given ticker'''
     tickerDf = pd.read_sql(f"SELECT * FROM Prices WHERE symbol = '{ticker}' AND date BETWEEN '{start_date}' AND '{end_date}'", engine)
