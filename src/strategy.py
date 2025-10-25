@@ -44,7 +44,7 @@ class ThresholdStrategy(bt.Strategy):
 
 
 
-def backtest(strategy, buy, sell, start, end, ticker):
+def backtest(buy, sell, start, end, ticker):
     cerebro = bt.Cerebro()
     #df = test_ingest1(start, end, ticker) # replace with in place change, db_ticker(start,end,ticker) should be able to produce same output
     df = db_ticker(start,end, ticker)
