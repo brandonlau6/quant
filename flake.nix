@@ -25,12 +25,14 @@
             jupyter
             numpy
             pandas
-	          fastapi
-            yfinance
+	    fastapi[standard]
+            fastapi-cli
+	    yfinance
             psycopg2
             sqlalchemy
             backtrader
             matplotlib
+	    nicegui
             #pyalgotrade
 	          #backtesting
             #mercantile

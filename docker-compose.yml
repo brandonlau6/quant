@@ -11,6 +11,16 @@ services:
       - "5432:5432"
     volumes:
       - ssmif_db:/var/lib/postgresql/data
+  app:
+    build: ./src
+    restart: always
+    ports:
+        - 8080:8080
+    environment:
+        - PUID=1000 # change this to your user id
+        - PGID=1000 # change this to your group id
+    volumes:
+        - ./src:/app/
 
 
 volumes:
