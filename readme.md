@@ -29,4 +29,16 @@ docker compose up -d
 
 4. Once started, navigate to http://localhost:8080
 
+# Development
+This application was developed using nix, you can run ``nix develop`` to enter into a development environment with all dependencies
 
+Alternatively:
+1. Create and enter a [[python virtual environment]](https://docs.python.org/3/library/venv.html)
+2. 
+```
+cd src
+```
+3. 
+```
+pip install -r requirements.txt
+```
