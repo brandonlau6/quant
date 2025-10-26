@@ -1,0 +1,12 @@
+ipython
+jupyter
+numpy
+pandas
+fastapi[standard]
+fastapi-cli
+yfinance
+psycopg2-binary
+sqlalchemy
+backtrader
+matplotlib
+nicegui
