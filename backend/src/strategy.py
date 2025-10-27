@@ -44,7 +44,7 @@ class ThresholdStrategy(bt.Strategy):
                 #print(f"SELL at {self.data.close[0]}")
 
 
-
+# runs backtesting and returns dataframe of trades
 def backtest(buy, sell, start, end, ticker, strategy):
     cerebro = bt.Cerebro()
     #df = test_ingest1(start, end, ticker) # replace with in place change, db_ticker(start,end,ticker) should be able to produce same output
@@ -63,7 +63,7 @@ def backtest(buy, sell, start, end, ticker, strategy):
 
     #tradeDf = pd.Dataframe(strat)
 
-
+# runs backtest function and outputs data to database
 def backDb(buy_threshhold, sell_threshold, start,end,ticker, strategy):
 # sends backtested results to database
     backDf = backtest(buy_threshhold, sell_threshold, start, end, ticker, strategy)
@@ -77,6 +77,7 @@ def backDb(buy_threshhold, sell_threshold, start,end,ticker, strategy):
         index =False
     )
 
+# retrieves dataframe of trades
 def get_trades(start_date, end_date, ticker, strategy):
     '''Returns price data from db of start and end date with given ticker'''
     tradesDf = pd.read_sql(f"""
@@ -91,8 +92,10 @@ def get_trades(start_date, end_date, ticker, strategy):
 
     return tradesDf
 
+
+# retreives paginated list of price data 
 def getTradesPaginated(start_date, end_date, ticker, strategy, size=10, offset=0):
-    '''Returns price data from db of start and end date with given ticker'''
+    '''Returns paginated list of price data from db of start and end date with given ticker'''
     tradesDf = pd.read_sql(f"""
         SELECT date, signal, price, strategy
         FROM Trades

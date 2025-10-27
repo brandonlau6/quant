@@ -38,7 +38,7 @@ def doBacktest(body:backtestRequest):
         backDb(body.buy, body.sell, body.start, body.end, body.ticker, body.strategy)
         return "Backtesting Successful"
     except:
-        return "Error backtesting :("
+        return "Error backtesting"
 @app.get("/api/v1/getBacktest")
 def backtest_endpoint(start: str, end: str, ticker:str, strategy:str, size: int=10, offset:int=0):
     return getTradesPaginated(start,end,ticker,strategy,size=size, offset=offset)

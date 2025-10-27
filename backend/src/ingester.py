@@ -43,6 +43,7 @@ def retrieveTicker(start_date,end_date,ticker):
     return tickerDf
 
 def db_ticker(start_date,end_date,ticker):    
+    '''Returns price data from database from start to end period and will retrieve missing data'''
     # check if the start-end time period is empty, if so will skip and invest data
     if retrieveTicker(start_date,end_date,ticker).empty == True:
         ingest_data(start_date,end_date,ticker)
