@@ -84,6 +84,8 @@ Will save trading data to database
 ``GET /api/v1/getBacktest``
 Retrieves backtest information from database, given strategy name, start, end and ticker, assuming the information is present in the trades database
 eg:
+
+
 start: '2020-01-01'
 end: '2020-10-01'
 ticker 'AAPL'
