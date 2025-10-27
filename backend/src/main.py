@@ -31,7 +31,7 @@ class backtestRequest(BaseModel):
     buy: float
     sell: float
 
-
+## Send request to backend for backtesting
 @app.post("/api/v1/backtest")
 def doBacktest(body:backtestRequest):
     try:
@@ -39,6 +39,8 @@ def doBacktest(body:backtestRequest):
         return "Backtesting Successful"
     except:
         return "Error backtesting"
+
+# get backtesting results
 @app.get("/api/v1/getBacktest")
 def backtest_endpoint(start: str, end: str, ticker:str, strategy:str, size: int=10, offset:int=0):
     return getTradesPaginated(start,end,ticker,strategy,size=size, offset=offset)
@@ -49,6 +51,8 @@ class metricsRequest(BaseModel):
     ticker: str
     strategy: str
 
+
+# get 
 @app.post("/api/v1/metrics")
 def metrics_endpoint(body:metricsRequest):
     try:
