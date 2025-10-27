@@ -1,3 +1,6 @@
-src/__pycache__
+backend/__pycache__
+backend/__pycache__/*
 src/.venv
-
+flake.lock
+frontend/package-lock.json
+frontend/node_modules
